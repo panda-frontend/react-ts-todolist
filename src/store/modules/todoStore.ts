@@ -27,4 +27,5 @@ const todoStore = createSlice({
   reducers: {}
 })
 
-export default todoStore.reducer;
+const reducer = todoStore.reducer;
+export default reducer;
