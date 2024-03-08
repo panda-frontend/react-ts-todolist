@@ -9,3 +9,6 @@ const store = configureStore({
 
 
 export default store;
+
+// https://stackoverflow.com/a/60223837
+export type IRootState = ReturnType<typeof store.getState>

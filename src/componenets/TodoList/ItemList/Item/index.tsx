@@ -1,9 +1,13 @@
+import { ToDo } from "../../../types"
 
-
-export default () => {
+interface Props {
+  item: ToDo
+}
+export default (props: Props) => {
+  const { item } = props
   return (
     <li>
-      <span>item1</span>
+      <span>{item.title}</span>
       <button>完成</button>
       <button>删除</button>
     </li>
