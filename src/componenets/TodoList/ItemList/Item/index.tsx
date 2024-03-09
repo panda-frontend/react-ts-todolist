@@ -14,7 +14,6 @@ export default (props: Props) => {
   // const { item } = props
   const { id, title, completed } = props.item
 
-  const [completeValue, setCompleteValue] = useState<string>("完成")
   const dispatch = useDispatch()
   // 删除条目
   const deleteItem = (id: number) => {
@@ -22,11 +21,6 @@ export default (props: Props) => {
   }
   const switchItemState = (id: number) => {
     dispatch(switchTodoState(id))
-    if (!completed) {
-      setCompleteValue("重开")
-    } else {
-      setCompleteValue("完成")
-    }
   }
 
 
@@ -37,7 +31,7 @@ export default (props: Props) => {
           completed && "completed"
         )}
       >{title}</span>
-      <button onClick={() => { switchItemState(id) }}>{completeValue}</button>
+      <button onClick={() => { switchItemState(id) }}>{completed ? "重开" : "完成"}</button>
       <button onClick={() => { deleteItem(id) }}>删除</button>
     </li>
   )

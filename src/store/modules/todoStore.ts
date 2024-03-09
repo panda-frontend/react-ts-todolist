@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Todos } from "../../componenets/types";
 
+
 const defaultTodos: Todos = [
   {
     id: 1,
@@ -22,7 +23,7 @@ const defaultTodos: Todos = [
 const todoStore = createSlice({
   name: "todolist",
   initialState: {
-    todos: defaultTodos
+    todos: defaultTodos,
   },
   reducers: {
     addTodo: (state, action) => {
@@ -38,7 +39,7 @@ const todoStore = createSlice({
         }
         return todo
       })
-    }
+    },
   },
 })
 
