@@ -91,3 +91,36 @@ import { IRootState } from "../../../store"
 // 使用
 let { todos } = useSelector((state: IRootState) => state.todolist)
 ```
+
+
+## 4. props 传参数
+
+1. 使用 `interface` 定义接口
+2. 在定义 **函数组件** 的时候， 将 `props: IProps` 作为参数传递。
+3. 直接在组件内部使用
+
+```tsx
+interface IProps {
+  item: ToDo
+}
+
+export default (props: IProps) => {
+  const { id, title, completed } = props.item
+  return (
+    <div>{id}<divs>
+  )
+}
+```
+
+4. 可以直接在 **函数组件** 定义的时候， 使用解构赋值是也需要带上 **参数类型** `{item}: IProps`
+
+```tsx
+// 使用解构赋值获取 item
+export default ({ item }: IProps) => {
+  const { id, title, completed } = item
+  return (
+    <div>{id}<divs>
+  )
+}
+```
+

@@ -8,10 +8,10 @@ interface Props {
   item: ToDo
 }
 
-export default (props: Props) => {
+export default ({ item }: Props) => {
 
   // const { item } = props
-  const { id, title, completed } = props.item
+  const { id, title, completed } = item
 
   const dispatch = useDispatch()
   // 删除条目
