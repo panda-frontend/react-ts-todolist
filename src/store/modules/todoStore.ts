@@ -24,8 +24,16 @@ const todoStore = createSlice({
   initialState: {
     todos: defaultTodos
   },
-  reducers: {}
+  reducers: {
+    addTodo: (state, action) => {
+      state.todos.push(action.payload)
+    }
+  },
 })
 
+// 默认导出 reducer 到 ./store/index.ts 中组合
 const reducer = todoStore.reducer;
 export default reducer;
+
+// 机构并导出 action creators
+export const { addTodo } = todoStore.actions;
