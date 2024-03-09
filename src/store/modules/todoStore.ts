@@ -30,6 +30,14 @@ const todoStore = createSlice({
     },
     deleteTodo: (state, action) => {
       state.todos = state.todos.filter(todo => todo.id !== action.payload)
+    },
+    switchTodoState: (state, action) => {
+      state.todos = state.todos.map(todo => {
+        if (todo.id === action.payload) {
+          todo.completed = !todo.completed
+        }
+        return todo
+      })
     }
   },
 })
@@ -41,3 +49,4 @@ export default reducer;
 // 机构并导出 action creators
 export const { addTodo } = todoStore.actions;
 export const { deleteTodo } = todoStore.actions;
+export const { switchTodoState } = todoStore.actions;
