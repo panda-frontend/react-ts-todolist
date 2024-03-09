@@ -27,6 +27,9 @@ const todoStore = createSlice({
   reducers: {
     addTodo: (state, action) => {
       state.todos.push(action.payload)
+    },
+    deleteTodo: (state, action) => {
+      state.todos = state.todos.filter(todo => todo.id !== action.payload)
     }
   },
 })
@@ -37,3 +40,4 @@ export default reducer;
 
 // 机构并导出 action creators
 export const { addTodo } = todoStore.actions;
+export const { deleteTodo } = todoStore.actions;
