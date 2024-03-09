@@ -3,7 +3,6 @@ import { deleteTodo, switchTodoState } from "../../../../store/modules/todoStore
 import { useDispatch } from "react-redux"
 import './index.css'
 import classNames from "classnames"
-import { useState } from "react"
 
 interface Props {
   item: ToDo
