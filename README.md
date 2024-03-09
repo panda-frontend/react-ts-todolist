@@ -62,7 +62,9 @@ const [active, setActive] = useState('all')
 如果是 **复杂类型** ， 可以通过 **泛型传值** 执行。 例如这里的 Todos
 
 ```tsx
-const [active, setActive] = useState<Todos>([])
+import { Todos } from '../../types'
+
+const [todos, setTodos] = useState<Todos>([])
 ```
 
 ## 3. `redux`
